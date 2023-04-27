@@ -12,7 +12,7 @@ TOKEN = os.environ.get('DISCORD_TOKEN') # get the token from the environment var
 async def send_message(message, user_message, is_private):
     try:
         if user_message.startswith('embed'):
-            embed = discord.Embed(title="Hello, World!", description="This is a test message.", color=discord.Color.green())
+            embed = discord.Embed(title="Guten Tag!", description="This is a test message.", color=discord.Color.green())
             await message.channel.send(embed=embed)
         else:
             response = responses.get_response(user_message)
