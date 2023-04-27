@@ -7,9 +7,8 @@ load_dotenv() # load variables from .env file
 
 TOKEN = os.environ.get('DISCORD_TOKEN') # get the token from the environment variables
 
-# Your bot code here...
 
-
+# Embed Message
 async def send_message(message, user_message, is_private):
     try:
         if user_message.startswith('embed'):
@@ -25,11 +24,18 @@ async def send_message(message, user_message, is_private):
 
 
 
-
+# Bot Setup
 def run_discord_bot():
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
+
+    activity = discord.Activity(
+    type=discord.ActivityType.playing,
+    name="Supporting DCB-Shop"
+)
+    
+    client.activity = activity
 
     @client.event
     async def on_ready():
