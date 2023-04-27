@@ -1,6 +1,13 @@
 import discord
 import responses
 import os
+from dotenv import load_dotenv
+
+load_dotenv() # load variables from .env file
+
+TOKEN = os.environ.get('DISCORD_TOKEN') # get the token from the environment variables
+
+# Your bot code here...
 
 
 async def send_message(message, user_message, is_private):
@@ -18,8 +25,8 @@ async def send_message(message, user_message, is_private):
 
 
 
+
 def run_discord_bot():
-    TOKEN = 'MTA5MzQ1MDU4NjcwNTM3MTE0Ng.GnOkjo.6Cpw9lbjWA7W4EzyIeMlH5etDJwW8ThZOuBJHk'
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
@@ -33,11 +40,14 @@ def run_discord_bot():
         if message.author == client.user:
             return 
 
-        if message.content.startswith('?'): # check if the message starts with a question mark
-            user_message = message.content[1:] # remove the question mark from the message
+        if message.content.startswith('?'):
+            user_message = message.content[1:]
             await send_message(message, user_message, is_private=True)
         else:
-            await send_message(message, message.content, is_private=False)
+            response = responses.get_response(message.content)
+            if response: # only send a reply if the response is not empty
+                await send_message(message, response, is_private=False)
+
 
     client.run(TOKEN)
 
