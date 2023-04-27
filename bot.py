@@ -11,20 +11,39 @@ TOKEN = os.environ.get('DISCORD_TOKEN') # get the token from the environment var
 async def send_message(message, user_message, is_private):
     try:
         if user_message.startswith('embed'):
-            args = user_message.split('|')
-            title = args[0].split('=')[1].strip()
-            description = args[1].split('=')[1].strip()
-            embed = discord.Embed(title=title, description=description, color=0x00ff00)
-            sent_msg = await message.channel.send(embed=embed)
+            # Parse the user's input to extract the title and description
+            parts = user_message.split('|')
+            title = parts[0][6:].strip()
+            description = parts[1][12:].strip()
+
+            # Create the embed with the title, description, and a green color
+            embed = discord.Embed(title=title, description=description, color=discord.Color.blue())
+
+            # Set the image to the file path of your logo
+            file = discord.File("C:/Users/dines/Downloads/DCB-shop/shop/Bild_2023-04-27_104345754-removebg-preview.png", filename="image.png")
+            embed.set_thumbnail(url="attachment://image.png")
+
+            # Add a footer to the embed
+            embed.set_footer(text="Made by Reavex")
+
+            # Send the embed message
+            sent_message = await message.channel.send(embed=embed, file=file)
+
+            # Delete the original command message and the sent embed message after 10 seconds
+            await asyncio.sleep(10)
             await message.delete()
+            await sent_message.delete()
+
         else:
             response = responses.get_response(user_message)
             if response: # only send a reply if the response is not empty
                 await message.author.send(response) if is_private else await message.channel.send(response)
-            await message.delete()
 
     except Exception as e:
         print(e)
+
+
+
 
 
 
