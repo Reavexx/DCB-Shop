@@ -5,9 +5,8 @@ import os
 
 async def send_message(message, user_message, is_private):
     try:
-        if user_message == "embed":
-            embed = discord.Embed(title="Title", description="Description", color=0x00ff00)
-            embed.add_field(name="Field Name", value="Field Value", inline=False)
+        if user_message.startswith('embed'):
+            embed = discord.Embed(title="Hello, World!", description="This is a test message.", color=discord.Color.green())
             await message.channel.send(embed=embed)
         else:
             response = responses.get_response(user_message)
@@ -16,7 +15,6 @@ async def send_message(message, user_message, is_private):
 
     except Exception as e:
         print(e)
-
 
 
 
