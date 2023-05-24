@@ -17,7 +17,43 @@
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-  </style>
+              .collapsible-content {
+          display: none;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+      
+        .collapsible-content p {
+          margin-bottom: 0;
+        }
+      
+        .collapsible-title {
+          cursor: pointer;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          position: relative;
+          font-weight: lighter;
+          background-color: rgba(211, 211, 211, 0.279);
+        }
+      
+        .collapsible-title::after {
+          content: '\25BC'; /* Unicode character for arrow down */
+          font-size: 13px;
+          color: #777;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+        }
+      
+        .collapsible-active .collapsible-title::after {
+          content: '\25B2'; /* Unicode character for arrow up */
+        }
+    </style>
       
     <!-- Custom styles for this template -->
     <link href="../../css/faq/faq.css" rel="stylesheet">
@@ -59,16 +95,99 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Welcome to our website</h1>
-            <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ducimus ipsa eum cumque amet magnam adipisci labore ipsum repudiandae unde aperiam neque excepturi, facere ut mollitia perspiciatis commodi nam laborum?</p>
-            <p>
-              <a href="../../html/overview/index.html" class="btn btn-primary my-2">Learn more</a>
-              <a href="../../html/pricing/index.html" class="btn btn-secondary my-2">Pricing</a>
+            <h2 class="fw-light">Here or some frequently asked questions. Hopefully, theese will be helpfull to you.</h2>
+          </div>
+        </div>
+      </section>
+
+      <div class="collapsible">
+        <h3 class="collapsible-title">How do I purchase a Discord bot from your online shop?</h3>
+        <div class="collapsible-content">
+          <p>You can create a ticket in our Discord server to begin the purchase of our bots in the #buy channel.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">What payment methods do you accept?</h3>
+        <div class="collapsible-content">
+          <p>We currently accept Paypal payments. More payment methods available soon.</p>
+        </div>
+      </div>  
+      <div class="collapsible">
+        <h3 class="collapsible-title">Can I customize the features of the Discord bot I'm purchasing?</h3>
+        <div class="collapsible-content">
+          <p>You can request custom features for your Discord bot when you create a ticker for your purchase.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">How long does it take to receive the Discord bot after purchase?</h3>
+        <div class="collapsible-content">
+          <p>Depends on the complexity of the features you require and how many orders we have, but you can expect only a few weeks for very complex projects.</p>
+        </div>
+      </div>      
+      <div class="collapsible">
+        <h3 class="collapsible-title">Can I request additional features or modifications for the Discord bot?</h3>
+        <div class="collapsible-content">
+          <p>When you are in the process of ordering the bot, you can request the additional features when testing the bot.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">Do you offer customer support for the purchased Discord bot?</h3>
+        <div class="collapsible-content">
+          <p>The main way we make our bots is with transparent communication with our customers. Our bot is only finished when our customer is satisfied with the product, and we take feedback to modify the bot to your liking.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">Is there any refund policy if I'm not satisfied with the purchased Discord bot?</h3>
+        <div class="collapsible-content">
+          <p>You won't have to purchase the bot if you're not satisfied with it. You'll be allowed to test the bot but won't get full access to it until you pay.</p>
+        </div>
+      </div>
+      
+      <div class="collapsible">
+        <h3 class="collapsible-title">Can I use the Discord bot on multiple servers?</h3>
+        <div class="collapsible-content">
+          <p>Yes, but only servers you own/are associated with. Sharing/selling the bot to other servers is not allowed and will result in the bot getting terminated.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">Are there any recurring fees or additional costs associated with the purchased Discord bot?</h3>
+        <div class="collapsible-content">
+          <p>No recurring fees, but there might be additional costs depending on the complexity of your request.</p>
+        </div>
+      </div>
+      
+      <div class="collapsible">
+        <h3 class="collapsible-title">How frequently are the Discord bots updated with new features or bug fixes?</h3>
+        <div class="collapsible-content">
+          <p>As soon as we find the newer version stable and ready for the public.</p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <h3 class="collapsible-title">Can I transfer the ownership of the purchased Discord bot to someone else?</h3>
+        <div class="collapsible-content">
+          <p>You are allowed to transfer ownership of the bot to another account, but not to someone else. You own the bot you purchased.</p>
+        </div>
+      </div>
+      
+      <div class="collapsible">
+        <h3 class="collapsible-title">Are there any limitations or restrictions on the usage of the Discord bot?</h3>
+        <div class="collapsible-content">
+          <p>Using any of our bots to break any Discord TOS and/or any laws is not allowed.</p>
+        </div>
+      </div>
+
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h2 class="fw-light">You didn't find what you where searching for?</h2>
+            <p class="lead text-muted">You can contact us using the #support channel on our Discord Server<p>
+              <a href="https://discord.gg/YuR7fzaShg" target="_blank" class="btn btn-primary my-2">Join our Discord</a>
             </p>
           </div>
         </div>
       </section>
-          <footer class="p-3 bg-dark text-white">
+
+      <footer class="p-3 bg-dark text-white">
         <div class="footer">
             <div class="container">
               <div class="row">
@@ -92,7 +211,22 @@
       </footer>
 
     </main>
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+      <script>
+        function toggleCollapsible() {
+          this.classList.toggle("collapsible-active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        }
+      
+        var collapsibleTitles = document.getElementsByClassName("collapsible-title");
+        for (var i = 0; i < collapsibleTitles.length; i++) {
+          collapsibleTitles[i].addEventListener("click", toggleCollapsible);
+        }
+      </script>
   </body>
 </html>
