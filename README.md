@@ -20,10 +20,6 @@
 8. Create .ENV File
     > Type in .ENV File this Command
     ```DISCORD-TOKEN=yourtoken```
-<figure class="video_container">
-  <iframe src="vid/ENV-Video.mp4" frameborder="0" allowfullscreen="true"> 
-</iframe>
-</figure>
 9. Now your ready to go, have fun!
 
 ### Programmers
