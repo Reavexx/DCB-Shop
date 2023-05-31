@@ -2,10 +2,12 @@ import discord
 import responses
 import os
 from dotenv import load_dotenv
+from discord.ext import tasks
 
 load_dotenv() # load variables from .env file
 
-TOKEN = os.environ.get('DISCORD_TOKEN') # get the token from the environment variables
+TOKEN = "MTA5MzQ1MDU4NjcwNTM3MTE0Ng.GAuibP.hY-sEtaDUXjE24bErx5MlipJ5M5hYNHxkdEfAc" # get the token from the environment variables
+STATS_CHANNEL_ID = int(os.environ.get('STATS_CHANNEL_ID'))
 
 
 async def send_message(message, user_message, is_private):
